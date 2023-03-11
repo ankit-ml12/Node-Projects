@@ -1,4 +1,4 @@
-const UnaunthenticatedError = require('../errors')
+const { UnaunthenticatedError } = require('../errors')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
