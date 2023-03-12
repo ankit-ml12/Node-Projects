@@ -5,10 +5,10 @@ const jwt = require('jsonwebtoken')
 
 const register = async (req, res) => {
   const user = await User.create({ ...req.body })
-  const token = jwt.sign({ userId: user._id, name: user.name }, 'jwtsecret', {
-    expiresIn: '30d',
-  })
-  res.status(StatusCodes.CREATED).json({ name: { user: user.name }, token })
+
+  res
+    .status(StatusCodes.CREATED)
+    .json({ name: user.name, token: user.getToken() })
 }
 
 const login = async (req, res) => {
