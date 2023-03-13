@@ -40,12 +40,15 @@ UserSchema.methods.getName = function () {
 UserSchema.methods.getToken = function () {
   const token = jwt.sign(
     { userId: this._id, name: this.name },
-    prcess.env.JWT_SECRET,
+    process.env.JWT_SECRET,
     {
       expiresIn: process.env.JWT_LIFETIME,
     }
   )
   return token
 }
-
+UserSchema.methods.comparePassword = async function (candidatePassword) {
+  const isMatch = await bcrypt.compare(candidatePassword, this.password)
+  return isMatch
+}
 module.exports = mongoose.model('User', UserSchema)

@@ -1,6 +1,5 @@
 const express = require('express')
 const route = express.Router()
-
 const { register, login } = require('../contollers/auth')
 
 route.post('/register', register)
