@@ -24,7 +24,7 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authenticatUser, jobsRouter)
 
 app.use(notFoundMiddleware)
-// app.use(errorHandlerMiddleware)
+app.use(errorHandlerMiddleware)
 
 const start = async () => {
   try {
