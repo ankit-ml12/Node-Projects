@@ -5,7 +5,7 @@ const purchase = [
 const total_amount = 10998
 const shipping_fee = 1099
 
-var stripe = Stripe('pk_live_Ymx47u3dhEiTQzSjaeKWRdrs00zwa9NN0C')
+var stripe = Stripe('pk_test_KaftInWdd6Pn6ZtoR9Heyk8G00eI0JkvP1')
 
 // The items the customer wants to buy
 
