@@ -1,6 +1,8 @@
 const parse = require('csv-parse')
 const fs = require('fs')
 
+//here we store all habitaleplanet and return at the end
+
 const habitablePlanets = []
 
 function isHabitablePlanet(planet) {
