@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(planetsRouter)
 
 app.listen(8000, () => {
-  console.log('server is listning on port 8000')
+  console.log('server is listning on port 5000')
 })
 
 module.exports = app
