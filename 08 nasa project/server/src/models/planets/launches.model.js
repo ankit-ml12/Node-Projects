@@ -10,7 +10,7 @@ const launch = {
   success: true,
 }
 
-launch.set(launch.flighNumner, launch)
+launches.set(launch.flighNumner, launch)
 module.exports = {
   launches,
 }
