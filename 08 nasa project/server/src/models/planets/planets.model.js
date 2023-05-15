@@ -38,8 +38,11 @@ function loadPlanetsData() {
       })
   })
 }
+function getAllPlanets() {
+  return habitablePlanets
+}
 
 module.exports = {
+  getAllPlanets,
   loadPlanetsData,
-  planets: habitablePlanets,
 }

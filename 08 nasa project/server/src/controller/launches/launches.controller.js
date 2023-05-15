@@ -1,6 +1,6 @@
-const { launches } = require('../../models/planets/launches.model')
-const getAllLaunches = async (req, res) => {
-  return res.status(200).json(Array.from(launches.values()))
+const { getAllLaunches } = require('../../models/planets/launches.model')
+const httpgetAllLaunches = async (req, res) => {
+  return res.status(200).json(getAllLaunches())
 }
 
-module.exports = { getAllLaunches }
+module.exports = { httpgetAllLaunches }

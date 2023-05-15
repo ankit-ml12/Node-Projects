@@ -10,7 +10,11 @@ const launch = {
   success: true,
 }
 
+function getAllLaunches() {
+  return Array.from(launch.values())
+}
+
 launches.set(launch.flighNumner, launch)
 module.exports = {
-  launches,
+  getAllLaunches,
 }
