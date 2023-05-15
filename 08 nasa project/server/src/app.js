@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const planetsRouter = require('./routes/planets/planet.router')
-const launchesRouter = require('./routes/launches/launches.model')
+const launchesRouter = require('./routes/launches/launches.router')
 const app = express()
 
 app.use(
