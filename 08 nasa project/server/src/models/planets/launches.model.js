@@ -33,7 +33,13 @@ function addNewLaunch(launch) {
 function existsLaunchWithId(LaunchId) {
   return launches.has(LaunchId)
 }
-function abortLauchById(LaunchId) {}
+function abortLauchById(LaunchId) {
+  const abordted = launches.get(LaunchId)
+  abordted.upcoming = false
+  abordted.success = false
+  console.log(abordted)
+  return abordted
+}
 
 launches.set(launch.flightNumber, launch)
 module.exports = {
