@@ -1,6 +1,8 @@
 const {
   getAllLaunches,
   addNewLaunch,
+  existsLaunchWithId,
+  abortLauchById,
 } = require('../../models/planets/launches.model')
 const httpgetAllLaunches = async (req, res) => {
   return res.status(200).json(getAllLaunches())
@@ -18,12 +20,20 @@ function httpAddNewLaunches(req, res) {
   }
 
   launch.launchDate = new Date(launch.launchDate)
-  if (isNan(launch.launchDate)) {
+  if (isNaN(launch.launchDate)) {
     return res.status(400).json({ error: 'invalid lauch data' })
   }
 
   addNewLaunch(launch)
   return res.status(201).json(launch)
 }
+function httpAbortLaunch(req, res) {
+  const LaunchId = req.params.id
 
-module.exports = { httpgetAllLaunches, httpAddNewLaunches }
+  if (!existsLaunchWithId(LaunchId))
+    return res.status(404).json({ error: 'Launch not found' })
+
+  return res.status(200).json(aborted)
+}
+
+module.exports = { httpgetAllLaunches, httpAddNewLaunches, httpAbortLaunch }

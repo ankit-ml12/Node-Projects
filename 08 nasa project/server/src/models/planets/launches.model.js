@@ -30,8 +30,15 @@ function addNewLaunch(launch) {
   )
 }
 
+function existsLaunchWithId(LaunchId) {
+  return launches.has(LaunchId)
+}
+function abortLauchById(LaunchId) {}
+
 launches.set(launch.flightNumber, launch)
 module.exports = {
   getAllLaunches,
   addNewLaunch,
+  existsLaunchWithId,
+  abortLauchById,
 }
